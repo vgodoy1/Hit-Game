@@ -1,0 +1,37 @@
+<fa-icon 
+  [class]="'back-button'"
+  [icon]="['fas', 'arrow-left']"
+  (click)="router.navigate([''])"
+></fa-icon>
+
+<main>
+  <header>
+    <th 
+      *ngFor="let column of tableColumns"
+      [class]="'column-header'"
+    >
+      {{ column }}
+      <!-- <fa-icon 
+        [icon]="['fas', 'arrow-down']"
+        (click)="sortData(column)"
+      ></fa-icon> -->
+    </th>
+  </header>
+  <section>
+    <tr *ngFor="let team of (teams | async)">
+      <th>{{ team.posicao }}</th>
+      <th>{{ team.pontos }}</th>
+      <th>{{ team?.time?.nome_popular }}</th>
+      <th>{{ team?.time?.sigla }}</th>
+      <th><img src="{{ team?.time?.escudo }}"></th>
+      <th>{{ team?.jogos }}</th>
+      <th>{{ team?.vitorias }}</th>
+      <th>{{ team?.empates }}</th>
+      <th>{{ team?.gols_pro }}</th>
+      <th>{{ team?.gols_contra }}</th>
+      <th>{{ team?.saldo_gols }}</th>
+      <th>{{ team?.aproveitamento }}</th>
+      <th style="text-transform:uppercase">{{ team?.ultimos_jogos }}</th>
+    </tr>
+  </section>
+</main>
