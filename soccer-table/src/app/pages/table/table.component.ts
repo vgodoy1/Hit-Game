@@ -32,7 +32,7 @@ export class TableComponent implements OnInit {
     'Últimos Jogos',
   ];
 
-  public teams = new BehaviorSubject<SoccerTable[]>([{}]);
+  public teams = new BehaviorSubject<SoccerTable[]>([]);
 
   constructor(public router: Router, private hitGameService: HitGameService) {}
 
