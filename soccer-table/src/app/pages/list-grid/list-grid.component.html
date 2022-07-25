@@ -1,0 +1,67 @@
+<fa-icon 
+  [class]="'back-button'"
+  [icon]="['fas', 'arrow-left']"
+  (click)="router.navigate([''])"
+></fa-icon>
+
+<main>
+  
+    <header [formGroup]="form">
+      <fieldset>
+        <label>Nome</label>
+        <input
+          [formControlName]="'name'"
+          [placeholder]="'Digite aqui...'"
+        />
+      </fieldset>
+
+      <fieldset>
+        <label>Aproveitamento acima de</label>
+        <input
+          [type]="'number'"
+          [min]="0"
+          [formControlName]="'percentage'"
+          [placeholder]="'Digite aqui...'"
+        />
+      </fieldset>
+
+      <fieldset>
+        <label>Saldo de gols acima de</label>
+        <input
+          [type]="'number'"
+          [min]="0"
+          [formControlName]="'goals'"
+          [placeholder]="'Digite aqui...'"
+        />
+      </fieldset>
+
+      <fieldset *ngFor="let item of checklist">
+      <label>
+        <input 
+          [type]="'checkbox'" 
+          [value]="'{{item.id}}'" 
+          [checked]="item.isSelected"
+          (change)="isAllSelected(item)"
+        />
+        {{item.value}}
+      </label>
+      </fieldset>
+
+      <button
+        (click)="applyFilter()"
+      >Filtrar</button>
+    </header>
+  
+
+  <body>
+    <div
+      *ngFor="let team of (teams | async)"
+      [class]="'card'"
+      (click)="openModal(team)"
+    >
+      <h1>{{ team?.posicao }}º</h1>
+      <img src="{{ team?.time?.escudo }}">
+      <h1>{{ team?.time?.nome_popular }}</h1>
+    </div>
+  </body>  
+</main>

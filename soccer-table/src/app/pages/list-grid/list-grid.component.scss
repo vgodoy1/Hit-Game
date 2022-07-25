@@ -1,0 +1,114 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  display: flex;
+  width: fit-content;
+  gap: 35px;
+  padding: 10px 20px;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  background-image: linear-gradient(#494948, #1d232d);
+
+  input {
+    padding-left: 5px;
+    font-family: "poppins";
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.699);
+    border: 3px solid #1d232d;
+    border-radius: 8px;
+    background-color: rgb(104, 104, 104);
+
+    input:focus {
+      outline: none;
+    }
+  }
+
+  label {
+    font-family: "poppins";
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+  }
+
+  ::placeholder {
+    color: rgba(255, 255, 255, 0.699);
+    font-size: 12px;
+    font-family: "poppins";
+  }
+
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 0;
+  }
+
+  button {
+    width: 7vh;
+    height: 6vh;
+    border-radius: 10px;
+    font-weight: bold;
+    font-family: "poppins";
+    background-image: linear-gradient(#494948, #1d232d);
+    color: rgba(255, 255, 255, 0.836);
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr auto;
+  grid-gap: 3vh;
+
+  .card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 30vh;
+    width: 30vh;
+    background-image: linear-gradient(#161920c2, #494948);
+    border: 3px solid rgb(97, 93, 93);
+    border-radius: 20px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  img {
+    height: 15vh;
+    width: 15vh;
+  }
+
+  h1 {
+    font-family: "poppins";
+    font-size: 3vh;
+    color: rgba(255, 255, 255, 0.425);
+  }
+}
+
+.back-button {
+  display: inline-block;
+  font-size: 30px;
+  color: #494948;
+  margin: 30px 0px 20px 40px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
