@@ -1,58 +1,55 @@
-<fa-icon 
+<fa-icon
   [class]="'back-button'"
   [icon]="['fas', 'arrow-left']"
   (click)="router.navigate([''])"
 ></fa-icon>
 
 <main>
-  
-    <header [formGroup]="form">
-      <fieldset>
-        <label>Nome</label>
+  <header [formGroup]="form">
+    <fieldset>
+      <label>Nome</label>
+      <input
+        [formControlName]="'name'"
+        [placeholder]="'Digite aqui...'"
+      />
+    </fieldset>
+
+    <fieldset>
+      <label>Aproveitamento acima de</label>
+      <input
+        [type]="'number'"
+        [min]="0"
+        [formControlName]="'percentage'"
+        [placeholder]="'Digite aqui...'"
+      />
+    </fieldset>
+
+    <fieldset>
+      <label>Saldo de gols acima de</label>
+      <input
+        [type]="'number'"
+        [formControlName]="'goals'"
+        [placeholder]="'Digite aqui...'"
+      />
+    </fieldset>
+
+    <fieldset>
+      <label *ngFor="let item of checklist">
         <input
-          [formControlName]="'name'"
-          [placeholder]="'Digite aqui...'"
+          [type]="'checkbox'"
+          [value]="item.id"
+          [checked]="item.isSelected"
+          (change)="selectOption(item)"
         />
-      </fieldset>
+        {{item.value}}
+      </label>
+    </fieldset>
 
-      <fieldset>
-        <label>Aproveitamento acima de</label>
-        <input
-          [type]="'number'"
-          [min]="0"
-          [formControlName]="'percentage'"
-          [placeholder]="'Digite aqui...'"
-        />
-      </fieldset>
-
-      <fieldset>
-        <label>Saldo de gols acima de</label>
-        <input
-          [type]="'number'"
-          [min]="0"
-          [formControlName]="'goals'"
-          [placeholder]="'Digite aqui...'"
-        />
-      </fieldset>
-
-      <fieldset *ngFor="let item of checklist">
-        <label>
-          <input 
-            [type]="'checkbox'" 
-            [value]="item.id" 
-            [checked]="item.isSelected"
-            (change)="selectOption(item)"
-          />
-          {{item.value}}
-        </label>
-      </fieldset>
-
-      <div [class]="'filters'">
-        <button (click)="applyFilter()">Filtrar</button>
-        <button (click)="clearFilters()">Limpar</button>
-      </div>
-    </header>
-  
+    <div [class]="'filters'">
+      <button (click)="applyFilter()">Filtrar</button>
+      <button (click)="clearFilters()">Limpar</button>
+    </div>
+  </header>
 
   <body>
     <div
@@ -64,5 +61,5 @@
       <img src="{{ team?.time?.escudo }}">
       <h1>{{ team?.time?.nome_popular }}</h1>
     </div>
-  </body>  
+  </body>
 </main>

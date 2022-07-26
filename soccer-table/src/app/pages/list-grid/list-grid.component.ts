@@ -184,8 +184,6 @@ export class ListGridComponent implements OnInit {
   public clearFilters(): void {
     this.filteredTeams$.next(this.teams$.value);
     this.form.reset();
-    this.form.controls.lostLastGame.reset();
-    this.form.controls.wonLastGame.reset();
 
     this.checklist.forEach((checkbox) => {
       checkbox.isSelected = false;

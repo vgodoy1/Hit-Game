@@ -1,6 +1,6 @@
 <main>
-  <a 
-    *ngFor="let card of cards" 
+  <a
+    *ngFor="let card of cards"
     [class]="'card'"
     (click)="router.navigate([routes.get(card.name)])"
   >

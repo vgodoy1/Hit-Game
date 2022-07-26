@@ -12,11 +12,11 @@ main {
 header {
   display: flex;
   width: fit-content;
-  gap: 35px;
-  padding: 10px 20px;
+  gap: 3vw;
+  padding: 1vh 1vw;
   border-radius: 15px;
-  margin-bottom: 40px;
-  background-image: linear-gradient(#494948, #1d232d);
+  margin-bottom: 4vh;
+  background-image: linear-gradient(#717170c1, #1d232d);
 
   input {
     padding-left: 5px;
@@ -40,7 +40,7 @@ header {
 
   ::placeholder {
     color: rgba(255, 255, 255, 0.699);
-    font-size: 12px;
+    font-size: 1.2vh;
     font-family: "poppins";
   }
 
@@ -81,7 +81,7 @@ body {
     width: 30vh;
     gap: 2vh;
     background-image: linear-gradient(#161920c2, #494948);
-    border: 3px solid rgb(97, 93, 93);
+    border: 0.3vh solid rgb(97, 93, 93);
     border-radius: 20px;
     cursor: pointer;
 
@@ -104,7 +104,7 @@ body {
 
 .back-button {
   display: inline-block;
-  font-size: 30px;
+  font-size: 3vw;
   color: #494948;
   margin: 30px 0px 20px 40px;
   cursor: pointer;
@@ -118,4 +118,32 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5vh;
+}
+
+@media (max-width: 1203px){
+  body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5vh;
+    place-self: center;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1vh;
+    height: 30vh;
+    width: fit-content;
+    padding: 10px;
+  }
+
+  .filters {
+    width: 100%;
+    align-items: flex-end;
+    margin-left: 80px;
+
+    button {
+      width: 150px;
+    }
+  }
 }

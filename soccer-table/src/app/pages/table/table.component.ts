@@ -4,12 +4,6 @@ import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import { SoccerTable } from 'src/interfaces/soccer-table';
 import { HitGameService } from 'src/services/hit-game.service';
 
-export enum GameResults {
-  victory = 'v',
-  draw = 'e',
-  defeat = 'd',
-}
-
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
