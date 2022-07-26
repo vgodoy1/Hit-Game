@@ -1,0 +1,36 @@
+header {
+  display: flex;
+  justify-content: space-between;
+
+  fa-icon {
+    font-size: 3vh;
+    cursor: pointer;
+    color: #494948;
+  }
+}
+
+h1 {
+  font-family: "poppins";
+  font-size: 3vh;
+  font-weight: bolder;
+  color: rgba(255, 255, 255, 0.863);
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  font-size: 30px;
+  color: #494948;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+P {
+  font-family: "poppins";
+  font-size: 2vh;
+  color: rgba(255, 255, 255, 0.856);
+}

@@ -1,0 +1,21 @@
+<main>
+  <header>
+    <h1 mat-dialog-title>{{ data?.time?.nome_popular }}</h1>
+    <fa-icon
+      [class]="'back-button'"
+      [icon]="['fas', 'window-close']"
+      mat-dialog-close
+    ></fa-icon>
+  </header>
+  <p><b>Posição:</b> {{ data.posicao }}</p>
+  <p><b>Pontos:</b> {{ data.pontos }}</p>
+  <p><b>Nome:</b> {{ data?.time?.nome_popular }}</p>
+  <p><b>Sigla:</b> {{ data?.time?.sigla }}</p>
+  <p><b>Jogos:</b> {{ data?.jogos }}</p>
+  <p><b>Vitórias:</b> {{ data?.vitorias }}</p>
+  <p><b>Empates:</b> {{ data?.empates }}</p>
+  <p><b>Gols Pro:</b> {{ data?.gols_pro }}</p>
+  <p><b>Gols Conta:</b> {{ data?.gols_contra }}</p>
+  <p><b>Saldo de gols:</b> {{ data?.saldo_gols }}</p>
+  <p><b>Aproveitamento:</b> {{ data?.aproveitamento }}</p>
+</main>
