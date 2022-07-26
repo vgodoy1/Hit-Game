@@ -6,8 +6,10 @@ import {
 import {
   faArrowDown,
   faArrowLeft,
+  faArrowUp,
   faCircle,
   faMask,
+  faWindowClose,
 } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
@@ -17,6 +19,6 @@ import {
 })
 export class IconsModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faMask, faArrowDown, faArrowLeft, faCircle);
+    library.addIcons(faMask, faArrowLeft, faCircle, faWindowClose);
   }
 }

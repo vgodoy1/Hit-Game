@@ -36,26 +36,27 @@
       </fieldset>
 
       <fieldset *ngFor="let item of checklist">
-      <label>
-        <input 
-          [type]="'checkbox'" 
-          [value]="'{{item.id}}'" 
-          [checked]="item.isSelected"
-          (change)="isAllSelected(item)"
-        />
-        {{item.value}}
-      </label>
+        <label>
+          <input 
+            [type]="'checkbox'" 
+            [value]="item.id" 
+            [checked]="item.isSelected"
+            (change)="selectOption(item)"
+          />
+          {{item.value}}
+        </label>
       </fieldset>
 
-      <button
-        (click)="applyFilter()"
-      >Filtrar</button>
+      <div [class]="'filters'">
+        <button (click)="applyFilter()">Filtrar</button>
+        <button (click)="clearFilters()">Limpar</button>
+      </div>
     </header>
   
 
   <body>
     <div
-      *ngFor="let team of (teams | async)"
+      *ngFor="let team of (filteredTeams$ | async)"
       [class]="'card'"
       (click)="openModal(team)"
     >

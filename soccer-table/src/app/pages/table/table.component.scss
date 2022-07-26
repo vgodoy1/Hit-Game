@@ -21,14 +21,23 @@ header {
   color: rgb(196, 196, 196);
   border-left: 1px dotted #403d3d;
   overflow-wrap: break-word;
+}
+
+.column-header:first-child {
+  border-left: 0px;
+}
+
+.column-hover {
   cursor: pointer;
+
   &:hover {
     opacity: 0.3;
   }
 }
 
-.column-header:first-child {
-  border-left: 0px;
+fa-icon::after {
+  left: 14px;
+  transform: rotate(-45deg);
 }
 
 section {

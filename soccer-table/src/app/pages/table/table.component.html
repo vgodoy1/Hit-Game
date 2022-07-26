@@ -11,14 +11,10 @@
       [class]="'column-header'"
     >
       {{ column }}
-      <!-- <fa-icon 
-        [icon]="['fas', 'arrow-down']"
-        (click)="sortData(column)"
-      ></fa-icon> -->
     </th>
   </header>
   <section>
-    <tr *ngFor="let team of (teams | async)">
+    <tr *ngFor="let team of (teams$ | async)">
       <th>{{ team.posicao }}</th>
       <th>{{ team.pontos }}</th>
       <th>{{ team?.time?.nome_popular }}</th>
